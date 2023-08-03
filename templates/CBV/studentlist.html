@@ -1,0 +1,22 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+    <h1>Student Database</h1>
+    <h1>Today we are going to discuss on Class Based View -CBV -CRUD operation.(Create, Retrive, Update, Delete)</h1>
+    {% for object in object_list %}
+    Roll.no         : {{ object.rollno }}
+    University number: {{object.id}}
+    Name         : {{ object.name }}
+    Department   :{{ object.department }}
+    Age :{{ object.age }}
+    <div class="button-container">
+        <a href = "{{ object.id }}/studentdetail"><button type="button" class="btn btn-primary">Detail</button></a>
+        <a href = "{{ object.id }}/studentupdate"><button type="button" class="btn btn-success">Update</button></a>
+        <a href = "{{ object.id }}/studentdelete"><button type="button" class="btn btn-danger">Delete</button></a>
+    </div>
+
+    <br><hr>
+    {% endfor %}
+
+{% endblock %}

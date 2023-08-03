@@ -1,0 +1,17 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+Record.No : {{ data.id }}<br>
+Name: {{data.name}}<br>
+Department: {{data.department}}<br>
+Roll number: {{data.rollno}}<br>
+Age: {{data.age}}<br><br>
+
+
+<a href="{% url 'appname:students'%}" class="btn btn-primary" style="border-radius: 20px; margin-left: 30px;">
+    Student List    
+</a>
+
+
+{% endblock %}

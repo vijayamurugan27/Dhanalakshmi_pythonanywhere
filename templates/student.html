@@ -1,0 +1,36 @@
+{% include 'base.html' %}
+<style >
+  hr{
+    
+    border: 0;
+            border-top: 2px solid #fff; /* White color for the line */
+            margin: 20px 0;
+  }
+
+  .button-container {
+    display: flex;
+   justify-content: start;
+      
+}
+.btn{
+  border-radius: 20px;
+}
+</style>
+{% block content %}
+<a href="{% url 'appname:form'%}"><button type="button" class="btn btn-primary">New Student registraion</button></a>
+<br><hr>
+    {% for i in student %}
+          Name :  {{ i.name }}<br>
+          Roll Number : {{i.rollno}}<br>
+          Department: {{i.department}}<br>
+          Age   : {{i.age}}<br>
+          
+          <div class="button-container">
+            <a href = "detail/{{ i.id }}"><button type="button" class="btn btn-primary">Detail</button></a>
+            <a href = "update/{{ i.id }}"><button type="button" class="btn btn-success">Update</button></a>
+            <a href = "delete/{{ i.id }}"><button type="button" class="btn btn-danger">Delete</button></a>
+          </div>
+
+          <hr>
+          {% endfor %}    
+{% endblock %}
